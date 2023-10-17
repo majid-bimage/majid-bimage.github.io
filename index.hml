@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Random Color Name Display</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+  <h1 id="name">MAJID</h1>
+
+  <script>
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    function changeColor() {
+      var name = document.getElementById('name');
+      name.style.color = getRandomColor();
+    }
+
+    // Change color every second (1000ms)
+    setInterval(changeColor, 1000);
+  </script>
+</body>
+</html>
