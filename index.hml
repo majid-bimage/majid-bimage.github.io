@@ -13,7 +13,7 @@
 </style>
 </head>
 <body>
-  <h1 id="name">MAJID</h1>
+  <h1 id="name">Your Name</h1>
 
   <script>
     function getRandomColor() {
@@ -28,10 +28,13 @@
     function changeColor() {
       var name = document.getElementById('name');
       name.style.color = getRandomColor();
+
+      // Call changeColor again after 1000ms
+      setTimeout(changeColor, 1000);
     }
 
-    // Change color every second (1000ms)
-    setInterval(changeColor, 1000);
+    // Initial call to start the color change
+    changeColor();
   </script>
 </body>
 </html>
